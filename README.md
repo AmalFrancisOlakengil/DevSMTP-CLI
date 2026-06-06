@@ -73,15 +73,15 @@ To generate the required 16-character App Password for a Google/Gmail account:
 
 Navigate to your Google Account Security Panel.
 
-Under the "How you sign in to Google" section, make sure 2-Step Verification is enabled.
+Under the "How you sign in to Google" section, search for App Passwords.
 
-Click on 2-Step Verification, scroll to the very bottom of the page, and select App passwords.
+If App Passwords are not found, search it in the top search bar.
 
 Enter a custom name for the app (e.g., DevSMTP CLI) and click Create.
 
 Copy the 16-character password displayed inside the pop-up box (you do not need to copy the spaces). This is the key you will provide to the CLI tool.
 
-##Run the base command without any parameters to trigger the configuration window:
+# Run the base command without any parameters to trigger the configuration window:
 
 send_mail
 
