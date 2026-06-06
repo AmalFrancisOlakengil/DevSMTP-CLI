@@ -1,8 +1,8 @@
-﻿##🚀 Developer Context Mailer (DevSMTP CLI)
+﻿## Developer Context Mailer (DevSMTP CLI)
 
 DevSMTP CLI is a highly efficient, terminal-based developer tool designed to bridge the gap between noticing a code issue and notifying the responsible developer. Instead of context-switching to a heavy browser window or an email client, you can flag a line boundary issue, attach the context, and send a structured, encrypted email directly from your production or development terminal.
 
-##🛠️ Features
+## Features
 
 Instant Terminal Workflow: Send mails without switching from your active command-line interface.
 
@@ -12,17 +12,17 @@ Secure Encrypted Transmission: Utilizes OpenSSL to establish an authenticated SS
 
 Silent Credentials Management: Local setup profile saves configurations securely on the machine (~/.config/devsmtp/config.txt), eliminating repetitive login prompts.
 
-##📦 Distribution Directory Structure
+## Distribution Directory Structure
 
 Your portable, compiled release folder should look precisely like this:
 
-📁 devsmtp-cli/
-├── 📄 send_mail.exe          # Compiled C++ executable
-├── ⚙️ libcrypto-3-x64.dll     # OpenSSL Cryptographic Engine binary
-└── ⚙️ libssl-3-x64.dll         # OpenSSL Secure Connection protocol binary
+devsmtp-cli/
+├── send_mail.exe          # Compiled C++ executable
+├── libcrypto-3-x64.dll     # OpenSSL Cryptographic Engine binary
+└── libssl-3-x64.dll         # OpenSSL Secure Connection protocol binary
 
 
-##🚀 Installation & Setup
+## Installation & Setup
 
 Follow these steps to configure the command globally on your machine so it can be run from any workspace directory.
 
@@ -38,7 +38,7 @@ Step 2: Add to Environment Variables (Path)
 
 To use the send_mail command from any project repository, your operating system needs to know where the executable lives.
 
-#⚡ Option A: Windows PowerShell Setup (Recommended & Fastest)
+# Option A: Windows PowerShell Setup (Recommended & Fastest)
 
 Copy the path of the folder where you extracted the files (e.g., C:\tools\devsmtp).
 
@@ -51,7 +51,7 @@ Run the following command (replace C:\path\to\your\extracted\folder with your co
 
 Restart your terminal or VS Code window to apply the new system environment settings.
 
-#🪟 Option B: Windows Manual GUI Setup
+# Option B: Windows Manual GUI Setup
 
 Open the Windows Start Menu, type "env", and select Edit the system environment variables.
 
@@ -72,13 +72,13 @@ Click OK on all three open windows to save your changes and exit.
 Restart all active terminal windows or your code editor to load the updated configuration.
 
 
-##🔑 First-Time Setup (Credentials)
+## First-Time Setup (Credentials)
 
 The very first time you invoke the tool, it will execute an interactive configuration walkthrough. This saves your sender profile locally, so you only have to do this once.
 
-⚠️ IMPORTANT SECURITY NOTE: > Modern email providers (like Gmail) block basic account passwords for SMTP. You must use an App Password (a 16-character code generated in your email account's security configuration under 2-Factor Authentication).
+IMPORTANT SECURITY NOTE: > Modern email providers (like Gmail) block basic account passwords for SMTP. You must use an App Password (a 16-character code generated in your email account's security configuration under 2-Factor Authentication).
 
-##📧 How to Get a Gmail App Password
+## How to Get a Gmail App Password
 
 To generate the required 16-character App Password for a Google/Gmail account:
 
@@ -97,28 +97,28 @@ Copy the 16-character password displayed inside the pop-up box (you do not need 
 send_mail
 
 
-##💻 Command Usage
+## Command Usage
 
 Run the tool from any project folder by passing the source file name, recipient's email, and the specific line boundaries you wish to target:
 
 send_mail <filename> <recipient_email> <start_line> <end_line>
 
 
-##📝 Example:
+## Example:
 
 send_mail app.py teammate@company.com 14 18
 
 
-##🔄 Interactive Execution Flow:
+## Interactive Execution Flow:
 
 === Developer Context Mailer ===
 Subject: Buffer optimization trace fault
 Issue Description (Body): Mind double-checking the sizing array bound configuration over here? It feels like it could throw a memory layout fault when parsing dynamic blocks.
 
-🚀 Issue flagged! Contextual email sent successfully to teammate@company.com.
+Issue flagged! Contextual email sent successfully to teammate@company.com.
 
 
-##📊 What the Recipient Receives
+## What the Recipient Receives
 
 Your teammate will receive a beautifully formatted email displaying your written notes along with the targeted raw code block highlighted automatically:
 
@@ -126,6 +126,7 @@ Subject: [Code Issue] Buffer optimization trace fault
 
 Mind double-checking the sizing array bound configuration over here? It feels like it could throw a memory layout fault when parsing dynamic blocks.
 
+```
 ----- CODE SNIPPET (app.py) -----
 14: def process_payload(buffer, size):
 15:     # Bug: missing structural bounds mapping check here
@@ -133,4 +134,5 @@ Mind double-checking the sizing array bound configuration over here? It feels li
 17:     memoryview(internal_buffer)[:size] = buffer[:size]
 18: 
 -----------------------------------------
+```
 
