@@ -16,10 +16,12 @@ Silent Credentials Management: Local setup profile saves configurations securely
 
 Your portable, compiled release folder should look precisely like this:
 
+```
 devsmtp-cli/
 ├── send_mail.exe          # Compiled C++ executable
 ├── libcrypto-3-x64.dll     # OpenSSL Cryptographic Engine binary
 └── libssl-3-x64.dll         # OpenSSL Secure Connection protocol binary
+```
 
 
 ## Installation & Setup
@@ -38,20 +40,7 @@ Step 2: Add to Environment Variables (Path)
 
 To use the send_mail command from any project repository, your operating system needs to know where the executable lives.
 
-# Option A: Windows PowerShell Setup (Recommended & Fastest)
-
-Copy the path of the folder where you extracted the files (e.g., C:\tools\devsmtp).
-
-Open PowerShell (or VS Code Internal Terminal).
-
-Run the following command (replace C:\path\to\your\extracted\folder with your copied path):
-
-[Environment]::SetEnvironmentVariable("Path", [Environment]::GetEnvironmentVariable("Path", "User") + ";C:\path\to\your\extracted\folder", "User")
-
-
-Restart your terminal or VS Code window to apply the new system environment settings.
-
-# Option B: Windows Manual GUI Setup
+# Windows Manual GUI Setup
 
 Open the Windows Start Menu, type "env", and select Edit the system environment variables.
 
