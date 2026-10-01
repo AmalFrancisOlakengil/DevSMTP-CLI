@@ -90,7 +90,7 @@ send_mail
 
 Run the tool from any project folder by passing the source file name, recipient's email, and the specific line boundaries you wish to target:
 
-send_mail <filename> <recipient_email> <start_line> <end_line>
+send_mail <file_name> <recipient_email> <start_line> <end_line>
 
 
 ## Example:
